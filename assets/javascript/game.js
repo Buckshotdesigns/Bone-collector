@@ -29,16 +29,8 @@ $(document).ready(function() {
     // pushes random number to target score heading 
     $("#target-score").text(targetNumber);
 
-    // getting the random value associated to the four skeletons
 
-   
-    for (var i = 0; i < 4; i++){
-    
-    var boneOptions = Math.floor(Math.random() * 13 + 1 );
-     console.log(boneOptions);
-    
-    };
-    
+
     // assigning array value to each of the skeleton images and appending them to the screen
     for (var j = 0; j < image.length; j++){
 
@@ -48,20 +40,44 @@ $(document).ready(function() {
 
         boneImage.attr("src",  image[j]);
 
+            // getting the random value associated to the four skeletons
+        for (var i = 0; i < 4; i++){
+    
+            var boneOptions = Math.floor(Math.random() * 14 + 1);
+            
+            };
+
         boneImage.attr("data-bone-value", boneOptions);
 
         $("#bone-img").append(boneImage);
 
     };
 
-    // pushes the wins and losses to the page
-    $("#wins").text(wins);
-    $("#losses").text(losses);
+    $(".bone-image").on("click", function() {
 
-    // pushes player score to the page
-    $("#player-score").text(playerScore);
+        var boneValue = ($(this).attr("data-bone-value"));
+        boneValue = parseInt(boneValue);
 
+        playerScore += boneValue;
+        console.log(playerScore);
 
+        // pushes player score to the page
+        $("#player-score").text(playerScore);
+
+        if (playerScore === targetNumber) {
+            alert("You Win!!!!");
+            wins ++;
+        }
+        else if (playerScore > targetNumber) {
+            alert ("You Lose!!!!!");
+            losses ++;
+        }
+
+        // pushes the wins and losses to the page
+    $("#wins").text( wins);
+    $("#losses").text( losses);
+
+    });
 
 
 });
