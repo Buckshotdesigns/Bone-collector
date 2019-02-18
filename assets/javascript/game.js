@@ -1,11 +1,19 @@
 
 
+
+
 var wins = 0;
 var losses = 0;
 var playerScore = 0;
 
+var image = [
 
+"assets/images/bones1.png",
+"assets/images/bones2.png",
+"assets/images/bones3.png",
+"assets/images/bones4.png",
 
+]
 
 
 $(document).ready(function() {
@@ -29,11 +37,24 @@ $(document).ready(function() {
     console.log(boneOptions);
     };
 
-// pushes the wins and losses to the page
+    // assigning array value to each of the skeleton images and appending them to the screen
+    for (var j = 0; j < image.length; j++){
+
+        var boneImage = $("<img>");
+
+        boneImage.addClass("bone-image");
+
+        boneImage.attr("src",  image[j]);
+
+        $("#bone-img").append(boneImage);
+
+    }
+
+    // pushes the wins and losses to the page
     $("#wins").text(wins);
     $("#losses").text(losses);
-    
-// pushes player score to the page
+
+    // pushes player score to the page
     $("#player-score").text(playerScore);
 
 
