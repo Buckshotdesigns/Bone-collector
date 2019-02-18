@@ -30,13 +30,15 @@ $(document).ready(function() {
     $("#target-score").text(targetNumber);
 
     // getting the random value associated to the four skeletons
+
+   
     for (var i = 0; i < 4; i++){
-
-    var boneOptions = [];
-    var boneOptions = [Math.floor(Math.random() * 13 + 1 )];
-    console.log(boneOptions);
+    
+    var boneOptions = Math.floor(Math.random() * 13 + 1 );
+     console.log(boneOptions);
+    
     };
-
+    
     // assigning array value to each of the skeleton images and appending them to the screen
     for (var j = 0; j < image.length; j++){
 
@@ -46,9 +48,11 @@ $(document).ready(function() {
 
         boneImage.attr("src",  image[j]);
 
+        boneImage.attr("data-bone-value", boneOptions);
+
         $("#bone-img").append(boneImage);
 
-    }
+    };
 
     // pushes the wins and losses to the page
     $("#wins").text(wins);
