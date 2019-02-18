@@ -23,6 +23,8 @@ $(document).ready(function() {
 
 
 
+    $("#wins").text(wins);
+    $("#losses").text(losses);
 
 
 
