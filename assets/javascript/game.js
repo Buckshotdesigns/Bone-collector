@@ -2,6 +2,7 @@
 
 var wins = 0;
 var losses = 0;
+var playerScore = 0;
 
 
 
@@ -20,10 +21,20 @@ $(document).ready(function() {
     // pushes random number to target score heading 
     $("#target-score").text(targetNumber);
 
+    // getting the random value associated to the four skeletons
+    for (var i = 0; i < 4; i++){
+
+    var boneOptions = [];
+    var boneOptions = [Math.floor(Math.random() * 13 + 1 )];
+    console.log(boneOptions);
+    };
 
 // pushes the wins and losses to the page
     $("#wins").text(wins);
     $("#losses").text(losses);
+    
+// pushes player score to the page
+    $("#player-score").text(playerScore);
 
 
 
