@@ -2,8 +2,7 @@
 
 var wins = 0;
 var losses = 0;
-var totalScore = 0;
-var randomNumber = 0;
+
 
 
 
@@ -18,11 +17,11 @@ $(document).ready(function() {
    
     var targetNumber =[Math.floor(Math.random() * 69 + 30)];
     console.log(targetNumber);
-    
+    // pushes random number to target score heading 
     $("#target-score").text(targetNumber);
 
 
-
+// pushes the wins and losses to the page
     $("#wins").text(wins);
     $("#losses").text(losses);
 
