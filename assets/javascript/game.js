@@ -3,14 +3,30 @@
 var wins = 0;
 var losses = 0;
 var totalScore = 0;
+var randomNumber = 0;
 
 
 
 
 $(document).ready(function() {
 
- 
+
+
+// generate random number between 30 and 100 for the target score
+
+    var targetNumber = " " ;
+   
+    var targetNumber =[Math.floor(Math.random() * 69 + 30)];
+    console.log(targetNumber);
     
+    $("#target-score").text(targetNumber);
+
+
+
+
+
+
+
 });
 
 // assign random number to guess 
