@@ -1,20 +1,19 @@
 
 
 
-
-var wins = 0;
-var losses = 0;
-var playerScore = 0;
-
-var image = [
-
-"assets/images/bones1.png",
-"assets/images/bones2.png",
-"assets/images/bones3.png",
-"assets/images/bones4.png",
-
-]
-
+    var wins = 0;
+    var losses = 0;
+    var playerScore = 0;
+    
+    
+    var image = [
+    
+    "assets/images/bones1.png",
+    "assets/images/bones2.png",
+    "assets/images/bones3.png",
+    "assets/images/bones4.png",
+    
+    ]
 
 $(document).ready(function() {
 
@@ -22,7 +21,8 @@ $(document).ready(function() {
 
 // generate random number between 30 and 100 for the target score
 
-    var targetNumber = " " ;
+//  function resetGame () {  
+    var targetNumber = " ";
    
     var targetNumber =[Math.floor(Math.random() * 69 + 30)];
     console.log(targetNumber);
@@ -52,32 +52,40 @@ $(document).ready(function() {
         $("#bone-img").append(boneImage);
 
     };
+//  };
+
+//  resetGame();
 
     $(".bone-image").on("click", function() {
 
         var boneValue = ($(this).attr("data-bone-value"));
         boneValue = parseInt(boneValue);
+   
 
         playerScore += boneValue;
         console.log(playerScore);
-
-        // pushes player score to the page
-        $("#player-score").text(playerScore);
-
-        if (playerScore === targetNumber) {
+    
+       
+        if (playerScore == targetNumber) {
             alert("You Win!!!!");
             wins ++;
+            // resetGame();
         }
         else if (playerScore > targetNumber) {
             alert ("You Lose!!!!!");
             losses ++;
+            // resetGame();
         }
+    // pushes player score to the page
+    $("#player-score").text(playerScore);
 
-        // pushes the wins and losses to the page
+    // pushes the wins and losses to the page
     $("#wins").text( wins);
     $("#losses").text( losses);
 
     });
+
+    
 
 
 });
