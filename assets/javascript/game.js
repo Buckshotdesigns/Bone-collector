@@ -17,20 +17,17 @@
 
 $(document).ready(function() {
 
-
+    
 
 // generate random number between 30 and 100 for the target score
 
-//  function resetGame () {  
-    var targetNumber = " ";
-   
-    var targetNumber =[Math.floor(Math.random() * 69 + 30)];
+var targetNumber =[Math.floor(Math.random() * 69 + 30)];
     console.log(targetNumber);
     // pushes random number to target score heading 
     $("#target-score").text(targetNumber);
 
 
-
+   
     // assigning array value to each of the skeleton images and appending them to the screen
     for (var j = 0; j < image.length; j++){
 
@@ -41,20 +38,16 @@ $(document).ready(function() {
         boneImage.attr("src",  image[j]);
 
             // getting the random value associated to the four skeletons
-        for (var i = 0; i < 4; i++){
-    
+        
             var boneOptions = Math.floor(Math.random() * 14 + 1);
             
-            };
+           
 
         boneImage.attr("data-bone-value", boneOptions);
-
+   
         $("#bone-img").append(boneImage);
 
     };
-//  };
-
-//  resetGame();
 
     $(".bone-image").on("click", function() {
 
@@ -69,12 +62,12 @@ $(document).ready(function() {
         if (playerScore == targetNumber) {
             alert("You Win!!!!");
             wins ++;
-            // resetGame();
+           resetGame();
         }
-        else if (playerScore > targetNumber) {
+        else if (playerScore >= targetNumber) {
             alert ("You Lose!!!!!");
             losses ++;
-            // resetGame();
+            resetGame();
         }
     // pushes player score to the page
     $("#player-score").text(playerScore);
@@ -85,13 +78,29 @@ $(document).ready(function() {
 
     });
 
-    
+    function resetGame() {
+        
+    playerScore = 0;
+
+    targetNumber =[Math.floor(Math.random() * 69 + 30)];
+    console.log(targetNumber);
+    // pushes random number to target score heading 
+    $("#target-score").text(targetNumber);
+
+    for (var j = 0; j < 4; j++){
+
+       
+
+        var boneOptions = Math.floor(Math.random() * 14 + 1);
+
+        boneImage.attr("data-bone-value", boneOptions);
+
+
+    };
+
+    };
 
 
 });
 
-// assign random number to guess 
-// start with a zero wins and losses that increment after each game
-// assign random variable to each of the 4 skeletons
-// set the total score to zero 
-// add to the score each time a skeleton is clicked
+
