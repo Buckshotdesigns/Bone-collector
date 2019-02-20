@@ -6,14 +6,15 @@
 }
 
 footer {
-    height: 50px;
-    background-color: grey;
-    margin-top: 50px;
+    height: 100px;
+    background-color: #9d9c9c;
+    
 }
 
 
 img {
     padding: 0 30px;
     width: 200px;
-    /* height: 165px; */
+    
 }
+
