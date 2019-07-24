@@ -1,4 +1,4 @@
-# unit-4-game
+# Bone Collector
 
 The game reads as follows:
 
